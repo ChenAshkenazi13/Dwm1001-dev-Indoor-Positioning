@@ -7,7 +7,7 @@ This project utilizes the DWM1001-dev board from Decawave to measure the distanc
 The DWM1001 module is a Ultra Wideband (UWB) and Bluetooth hardware based on DecaWave's DW1000 IC and Nordic Semiconductor nrF52832 SoC. It allows to build a scalable Two-Way-Ranging (TWR) RTLS systems with up to thousands of tags.
 
 # Requirements
-* Windows 10 21H2 64bit
+* Works on (and tested on) Windows 11 Home x86_64 version 22H2
 * SEGGER Embedded Studio for Arm V5.64 (64-bit)
 * GNU ARM Embedded globally. Install the file: `gcc-arm-none-eabi-10.3-2021.10-win32.exe` from https://developer.arm.com/downloads/-/gnu-rm
 
