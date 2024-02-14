@@ -321,6 +321,8 @@ void app_thread_entry(uint32_t data){
  */
 void dwm_user_start(void)
 {
+        printf("Hello Genadi DjigaByte");
+        fflush(stdout);
 	uint8_t hndl;
 	int rv;
 
