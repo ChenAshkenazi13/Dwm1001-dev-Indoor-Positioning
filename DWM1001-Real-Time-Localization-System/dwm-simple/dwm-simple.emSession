@@ -56,9 +56,8 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="25" y="281" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="dwm-simple.c" selected="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1285" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="../include/dwm.h" selected="0" top="1225" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1285" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="dwm.h" selected="1" top="1225" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="22" y="297" useTextEdit="1" openedFrom="" useBinaryEdit="0" left="0" path="dwm-simple.c" selected="1" top="279" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="11" y="515" useTextEdit="1" openedFrom="C:/Users/Chen1/Downloads/DWM1001-Real-Time-Localization-System/DWM1001-Real-Time-Localization-System/dwm-simple/dwm-simple.c" useBinaryEdit="0" left="0" path="dwm.h" selected="0" top="524" codecName="Default"/>
  </Files>
  <ARMCrossStudioWindow activeProject="dwm-simple" fileDialogDefaultFilter="*" autoConnectTarget="J-Link" buildConfiguration="dwm1001_configuration" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="C:/Users/Chen1/Downloads/DWM1001-Real-Time-Localization-System-d3bf66444ca2bb5e85e8e801e66d4af0d2506d49/DWM1001-Real-Time-Localization-System-d3bf66444ca2bb5e85e8e801e66d4af0d2506d49/include" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
