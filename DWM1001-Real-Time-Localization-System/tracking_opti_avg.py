@@ -93,7 +93,16 @@ def update(particles, previous_value):
     print("Raw Data: ",value)
     value = str(value)
     
-    if(("0x0009: =" in value) and (" | 0x8faf: =" in value) and (" | 0x8fab: =" in value) and ("\r\n" in value)):
+    if("0x0009: =" in value):
+        print("got1")
+
+    if("0x8faf: =" in value):
+        print("got2")
+
+    if("0x8fab: =" in value):
+        print("got3")
+
+    if(("0x0009: =" in value) and ("0x8faf: =" in value) and ("0x8fab: =" in value)):# and ("\r\n" in value)):
     # if(("4818" in value) and ("528d" in value) and ("84b9" in value) and ("\r\n" in value)):
         data = value.split(" | ")
         # print("Data: ", data)
