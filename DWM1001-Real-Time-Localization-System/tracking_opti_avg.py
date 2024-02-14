@@ -14,8 +14,8 @@ import matplotlib.image as mpimg
 
 # Anchor node locations
 # anchor = #4 #3 #2
-anchor_x = [0,3280,3280]
-anchor_y = [3070,3070,0]
+anchor_x = [1000,0,0]
+anchor_y = [0,1000,0]
 anchor = list(zip(anchor_x, anchor_y))
 
 def trilaterate(anchor_x, anchor_y, anchor1, anchor2, anchor3):
@@ -50,7 +50,7 @@ def trilaterate(anchor_x, anchor_y, anchor1, anchor2, anchor3):
 
 # Configure the Serial Port
 ser = serial.Serial(
-    port='COM14',\
+    port='COM15',\
     baudrate=115200,\
     parity=serial.PARITY_NONE,\
     stopbits=serial.STOPBITS_ONE,\
@@ -91,7 +91,9 @@ thread.start()
 def update(particles, previous_value):
     global value
     print("Raw Data: ",value)
-    if(("0x4818: =" in value) and (" | 0x528d: =" in value) and (" | 0x84b9: =" in value) and ("\r\n" in value)):
+    value = str(value)
+    
+    if(("0x0009: =" in value) and (" | 0x8faf: =" in value) and (" | 0x8fab: =" in value) and ("\r\n" in value)):
     # if(("4818" in value) and ("528d" in value) and ("84b9" in value) and ("\r\n" in value)):
         data = value.split(" | ")
         # print("Data: ", data)

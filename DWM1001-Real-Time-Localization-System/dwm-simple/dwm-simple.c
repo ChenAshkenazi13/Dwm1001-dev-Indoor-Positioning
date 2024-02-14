@@ -228,9 +228,9 @@ void app_thread_entry(uint32_t data){
   /* Set the default position of the node */
   dwm_pos_t pos;
   pos.qf = 100;
-  pos.x = 10;
-  pos.y = 10;
-  pos.z = 0;
+  pos.x = 0; 
+  pos.y = 1000;
+  pos.z = 0; 
   rv = dwm_pos_set(&pos);
   if(rv == DWM_OK){
     printf("Set Position Quality Factor: %d\n", pos.qf);
@@ -288,21 +288,21 @@ void app_thread_entry(uint32_t data){
       if (rv == DWM_OK) {
         if(loc.pos_available)
         {
-           printf("number of anchor positions: %d   ->  ", loc.anchors.an_pos.cnt);
+           //printf("number of anchor positions: %d   ->  ", loc.anchors.an_pos.cnt);
            printf("[%d,%d,%d,%u] ", loc.pos.x, loc.pos.y, loc.pos.z, loc.pos.qf);
            printf(" [%d] ", loc.anchors.dist.cnt);
         }
         for (i = 0; i < loc.anchors.dist.cnt; ++i) {
-        if (i < loc.anchors.an_pos.cnt) {
-            printf("[%ld,%ld,%ld,%u]", loc.anchors.an_pos.pos[i].x,
-            loc.anchors.an_pos.pos[i].y,
-            loc.anchors.an_pos.pos[i].z,
-            loc.anchors.an_pos.pos[i].qf);
+        //if (i < loc.anchors.an_pos.cnt) {
+            //printf("[%ld,%ld,%ld,%u]", loc.anchors.an_pos.pos[i].x,
+            //loc.anchors.an_pos.pos[i].y,
+            //loc.anchors.an_pos.pos[i].z,
+            //loc.anchors.an_pos.pos[i].qf);
+            printf("0x%04x: ", loc.anchors.dist.addr[i]);
+            printf("=%lu | ", loc.anchors.dist.dist[i]);
           }
 
-          //printf("0x%04x: ", loc.anchors.dist.addr[i]);
-          //printf("=%lu | ", loc.anchors.dist.dist[i]);
-        }
+        //}
         printf("\n");
       } 
       else {
