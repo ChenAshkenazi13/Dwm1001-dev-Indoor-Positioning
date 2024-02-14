@@ -96,13 +96,13 @@ void on_dwm_evt(dwm_evt_t *p_evt)
 	}
 }
 
-enum nodeType { Anchor = 0, Tag = 1 };
+enum NodeType { Anchor = 0, Tag = 1 };
 
 void app_thread_entry(uint32_t data){
 
   /* Set the node type to either Anchor (0) or Tag (1) */
-  enum nodeType node_type = Anchor;
-  int rv;
+  enum NodeType node_type = Tag;
+  int rv; //WTF is "rv"?
 
   /* Check and Verify the Firmware version of the module */
   dwm_ver_t ver;
@@ -129,7 +129,7 @@ void app_thread_entry(uint32_t data){
     set_a_cfg.bridge = 0;
     set_a_cfg.common.enc_en = 0;
     set_a_cfg.common.led_en = 1;
-    set_a_cfg.common.ble_en = 0;
+    set_a_cfg.common.ble_en = 1;
     set_a_cfg.common.uwb_mode = DWM_UWB_MODE_ACTIVE;
     set_a_cfg.common.fw_update_en = 0;
 
@@ -283,15 +283,25 @@ void app_thread_entry(uint32_t data){
     else if (node_type == Tag){
       dwm_loc_data_t loc;
       int rv, i;
+
       rv = dwm_loc_get(&loc);
       if (rv == DWM_OK) {
         if(loc.pos_available)
         {
-           printf("[%ld,%ld,%ld,%u] ", loc.pos.x, loc.pos.y, loc.pos.z, loc.pos.qf);
+           printf("number of anchor positions: %d   ->  ", loc.anchors.an_pos.cnt);
+           printf("[%d,%d,%d,%u] ", loc.pos.x, loc.pos.y, loc.pos.z, loc.pos.qf);
+           printf(" [%d] ", loc.anchors.dist.cnt);
         }
         for (i = 0; i < loc.anchors.dist.cnt; ++i) {
-          printf("0x%04x: ", loc.anchors.dist.addr[i]);
-          printf("=%lu | ", loc.anchors.dist.dist[i]);
+        if (i < loc.anchors.an_pos.cnt) {
+            printf("[%ld,%ld,%ld,%u]", loc.anchors.an_pos.pos[i].x,
+            loc.anchors.an_pos.pos[i].y,
+            loc.anchors.an_pos.pos[i].z,
+            loc.anchors.an_pos.pos[i].qf);
+          }
+
+          //printf("0x%04x: ", loc.anchors.dist.addr[i]);
+          //printf("=%lu | ", loc.anchors.dist.dist[i]);
         }
         printf("\n");
       } 

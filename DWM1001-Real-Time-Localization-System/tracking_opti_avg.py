@@ -50,7 +50,7 @@ def trilaterate(anchor_x, anchor_y, anchor1, anchor2, anchor3):
 
 # Configure the Serial Port
 ser = serial.Serial(
-    port='COM4',\
+    port='COM14',\
     baudrate=115200,\
     parity=serial.PARITY_NONE,\
     stopbits=serial.STOPBITS_ONE,\
@@ -63,7 +63,7 @@ fig = plt.figure()
 ax = plt.axes(xlim=(-500,4000),ylim=(-500,4000))
 
 # Plot an image containing the room layout
-img = mpimg.imread('C:/Users/Jonathan/Documents/GitHub/UWB/Basic_Tracking/half10.png')
+img = mpimg.imread('C:/Users/Chen1/Downloads/DWM1001-Real-Time-Localization-System/DWM1001-Real-Time-Localization-System/img/half10.png')
 imgplot = ax.imshow(img, extent=(-500, 4301-500, -500, 3987-500))
 
 # Plot the anchors and initialize the tag locations.
