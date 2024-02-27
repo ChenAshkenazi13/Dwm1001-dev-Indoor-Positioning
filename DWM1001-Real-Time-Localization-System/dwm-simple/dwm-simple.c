@@ -101,7 +101,7 @@ enum NodeType { Anchor = 0, Tag = 1 };
 void app_thread_entry(uint32_t data){
 
   /* Set the node type to either Anchor (0) or Tag (1) */
-  enum NodeType node_type = Tag;
+  enum NodeType node_type = Anchor;
   int rv; //WTF is "rv"?
 
   /* Check and Verify the Firmware version of the module */
@@ -111,6 +111,7 @@ void app_thread_entry(uint32_t data){
     printf("FW Major: %d\n", ver.fw.maj);
     printf("FW Minor: %d\n", ver.fw.min);
     printf("FW Patch: %d\n", ver.fw.patch);
+
     printf("FW Res: %d\n", ver.fw.res);
     printf("FW Var: %d\n", ver.fw.var);
     printf("HW Version: %08x\n", ver.hw);
@@ -125,7 +126,7 @@ void app_thread_entry(uint32_t data){
    */
   if (node_type == Anchor){
     dwm_cfg_anchor_t set_a_cfg;
-    set_a_cfg.initiator = 0;
+    set_a_cfg.initiator = 1;
     set_a_cfg.bridge = 0;
     set_a_cfg.common.enc_en = 0;
     set_a_cfg.common.led_en = 1;
@@ -228,8 +229,8 @@ void app_thread_entry(uint32_t data){
   /* Set the default position of the node */
   dwm_pos_t pos;
   pos.qf = 100;
-  pos.x = 1000; 
-  pos.y = 1000;
+  pos.x = 1700; 
+  pos.y = 0;
   pos.z = 0; 
   rv = dwm_pos_set(&pos);
   if(rv == DWM_OK){
