@@ -1,5 +1,5 @@
 # Interface Control Document (ICD) for Parsing Tag-Distance Messages
-	This Document explains how to parse received messages from the tag using UART.
+This Document explains how to parse received messages from the tag using UART.
 	
 	
 ## Message Format
@@ -21,9 +21,8 @@ Each message contains pairs of TagID and distance, separated by "|". The format 
 
 ### Example of a message:
 ```
-0x1234: 382 | 0x6789: 1038
+0x1234: 382 | 0x6789: 1038 |
 ```
-
 0x1234: first tag id 
 382: the distance in millimeters to the first tag
 0x6789: second tag id 
